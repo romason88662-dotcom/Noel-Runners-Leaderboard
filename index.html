@@ -66,6 +66,24 @@ body{
     width:200px;
 }
 
+.header-row{
+    display:flex;
+    justify-content:space-between;
+    background:#1a1a1a;
+    padding:14px 16px;
+    border-radius:8px;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#8dff9c;
+}
+
+.rank-col{ width:80px; }
+.player-col{ flex:1; }
+.points-col{
+    width:80px;
+    text-align:right;
+}
+
 .list{
     display:none;
 }
@@ -75,6 +93,9 @@ body{
 }
 
 .entry{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     background:#111;
     margin:8px 0;
     padding:16px;
@@ -104,29 +125,83 @@ body{
 
         <div class="request-btn" onclick="requestRank()">Request Rank</div>
 
+        <div class="header-row">
+            <div class="rank-col">Rank</div>
+            <div class="player-col">Player</div>
+            <div class="points-col">Points</div>
+        </div>
+
         <div class="list active">
-            <div class="entry">Top 1: Plex</div>
-            <div class="entry">Top 2: TopmanVr</div>
-            <div class="entry">Top 3: Ian</div>
-            <div class="entry">Top 4: Not Taken</div>
-            <div class="entry">Top 5: Not Taken</div>
+            <div class="entry">
+                <div class="rank-col">Top 1</div>
+                <div class="player-col">Plex</div>
+                <div class="points-col">4.6</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 2</div>
+                <div class="player-col">TopmanVr</div>
+                <div class="points-col">4.5</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 3</div>
+                <div class="player-col">Ian</div>
+                <div class="points-col">4.4</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 4</div>
+                <div class="player-col">Not Taken</div>
+                <div class="points-col">---</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 5</div>
+                <div class="player-col">Not Taken</div>
+                <div class="points-col">---</div>
+            </div>
         </div>
 
         <div class="list">
-            <div class="entry">Top 1: Plex</div>
-            <div class="entry">Top 2: Extraordinary</div>
-            <div class="entry">Top 3: Spark</div>
-            <div class="entry">Top 4: TopmanVr</div>
-            <div class="entry">Top 5: Ttyt</div>
+            <div class="entry">
+                <div class="rank-col">Top 1</div>
+                <div class="player-col">Plex</div>
+                <div class="points-col">Unknown</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 2</div>
+                <div class="player-col">Extraordinary</div>
+                <div class="points-col">Unknown</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 3</div>
+                <div class="player-col">Spark</div>
+                <div class="points-col">Unknown</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 4</div>
+                <div class="player-col">TopmanVr</div>
+                <div class="points-col">Unknown</div>
+            </div>
+
+            <div class="entry">
+                <div class="rank-col">Top 5</div>
+                <div class="player-col">Ttyt</div>
+                <div class="points-col">Unknown</div>
+            </div>
         </div>
     </div>
 
     <div class="right">
         <div class="title" style="font-size:22px;">Recent Placements</div>
-		
+        
         <div class="placement">Ian Ranked Top 3</div>
         <div class="placement">TopmanVr Ranked Top 2</div>
-		<div class="placement">Plex Ranked Top 1</div>
+        <div class="placement">Plex Ranked Top 1</div>
     </div>
 </div>
 
