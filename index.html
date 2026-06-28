@@ -8,7 +8,6 @@ body{
     color:white;
     background:#1b1b1b;
 }
-
 .menu{
     width:100vw;
     height:100vh;
@@ -18,11 +17,7 @@ body{
     display:flex;
     gap:20px;
 }
-
-.left{
-    flex:2;
-}
-
+.left{ flex:2; }
 .right{
     flex:1;
     background:#111;
@@ -30,19 +25,16 @@ body{
     padding:15px;
     border:1px solid rgba(0,255,100,0.15);
 }
-
 .title{
     color:#8dff9c;
     margin-bottom:12px;
     font-size:28px;
 }
-
 .tabs{
     display:flex;
     gap:8px;
     margin-bottom:12px;
 }
-
 .tab{
     background:#21372a;
     color:#8dff9c;
@@ -50,11 +42,9 @@ body{
     border-radius:999px;
     cursor:pointer;
 }
-
 .tab.active{
     background:#2f5b3d;
 }
-
 .request-btn{
     background:#21372a;
     color:#8dff9c;
@@ -65,7 +55,6 @@ body{
     margin-bottom:16px;
     width:200px;
 }
-
 .header-row{
     display:flex;
     justify-content:space-between;
@@ -76,22 +65,14 @@ body{
     font-weight:bold;
     color:#8dff9c;
 }
-
 .rank-col{ width:80px; }
 .player-col{ flex:1; }
 .points-col{
     width:180px;
     text-align:right;
 }
-
-.list{
-    display:none;
-}
-
-.list.active{
-    display:block;
-}
-
+.list{ display:none; }
+.list.active{ display:block; }
 .entry{
     display:flex;
     justify-content:space-between;
@@ -103,14 +84,12 @@ body{
     border-left:4px solid #4dff88;
     font-size:20px;
 }
-
 .placement{
     background:#1a1a1a;
     padding:12px;
     margin:8px 0;
     border-radius:8px;
 }
-
 .game-note{
     color:#8dff9c;
     margin-bottom:10px;
@@ -122,7 +101,7 @@ body{
 
 <div class="menu">
     <div class="left">
-        <div class="title">Leaderboard</div>
+        <div class="title">Noel Runners Leaderboard</div>
 
         <div class="tabs">
             <div class="tab active" onclick="showTab(0)">Main Ranks</div>
@@ -134,8 +113,8 @@ body{
 
         <div class="header-row" id="headerRow">
             <div class="rank-col">Rank</div>
-            <div class="player-col">Player</div>
-            <div class="points-col">Points</div>
+            <div class="player-col" id="middleHeader">Player</div>
+            <div class="points-col" id="pointsHeader">Points</div>
         </div>
 
         <div class="list active">
@@ -155,9 +134,7 @@ body{
         </div>
 
         <div class="list">
-            <div class="game-note">
-                Additional Points = bonus points for moving up in player rankings
-            </div>
+            <div class="game-note">Additional Points = bonus points for moving up in player rankings</div>
 
             <div class="entry"><div class="rank-col">Top 1</div><div class="player-col">Gorilla Tag</div><div class="points-col">5.0</div></div>
             <div class="entry"><div class="rank-col">Top 2</div><div class="player-col">Noel Runners</div><div class="points-col">4.5</div></div>
@@ -169,7 +146,6 @@ body{
 
     <div class="right">
         <div class="title" style="font-size:22px;">Recent Placements</div>
-        
         <div class="placement">Ian Ranked Top 3</div>
         <div class="placement">TopmanVr Ranked Top 2</div>
         <div class="placement">Plex Ranked Top 1</div>
@@ -184,11 +160,14 @@ function showTab(index){
     document.querySelectorAll(".list")[index].classList.add("active");
     document.querySelectorAll(".tab")[index].classList.add("active");
 
-    const pointsHeader = document.querySelector("#headerRow .points-col");
+    const middleHeader = document.getElementById("middleHeader");
+    const pointsHeader = document.getElementById("pointsHeader");
 
     if(index === 2){
+        middleHeader.textContent = "Game";
         pointsHeader.textContent = "Additional Points";
     } else {
+        middleHeader.textContent = "Player";
         pointsHeader.textContent = "Points";
     }
 }
